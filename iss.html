@@ -140,7 +140,7 @@
                 // Request parameters
                 var parameters = {'lat': lat, 'lng': lon, 'radius':1, 'username':'user'};
                 // Request to Ocean endpoint
-                $.getJSON('https://api.geonames.org/oceanJSON?', parameters, function(data) {
+                $.getJSON('http://api.geonames.org/oceanJSON?', parameters, function(data) {
 
                   // Create ocean variable
                   var ocean = '';
