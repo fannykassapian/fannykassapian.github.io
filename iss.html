@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <!-- "width=device-width" causes the page to scale down to fit content that overflows the viewport bounds. "shrink-to-fit=no" prevent the page from scaling to fit the viewport.  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <meta property="og:description" content="Personal website" />
+  <meta property="og:site_name" content="fkassapian" />
+  <!-- <meta property="og:image" content="https://tailoredpath.com/navigate_data.png" /> -->
+  <meta property="og:title" content="Personal website" />
+  <meta property="og:url" content="https://fkassapian.com"/>
+  <!-- <meta property="og:image:width" content="1844" />
+  <meta property="og:image:height" content="1320" /> -->
+
+  <title>fkassapian</title>
+  <!-- <link rel="icon" type="image/png" href="img/picture3.png"/> -->
+
+  <!-- Bootstrap CSS link (CDN) -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+  <!-- Links to Google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400&display=swap" rel="stylesheet">
+
+  <!-- Fontawesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+  <!-- Custom style -->
+  <link href="css/iss.css" rel="stylesheet">
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+  crossorigin=""/>
+
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+  integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+  crossorigin=""></script>
+
+  <!-- highlight.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/atom-one-dark.min.css">
+
+
+</head>
+
+<body>
+
+  <div class='container'>
+    <header>
+      <div id='titleContainer'>
+        <h1 id='mainTitle'>Where is the International Space Station?</h1>
+        <p id='mainDescription'>This map tracks the real time position of the International Space Station (ISS). It updates every 5 seconds.</p>
+        <p><a id='home-link' href='index.html' target=_blank><i class="fas fa-angle-left"></i> Home</a></p>
+        <p id='socContainer'><a class='soc-link' href='' target=_blank><i class="fab fa-github-square"></i></a>
+        <a class='soc-link' href='' target=_blank><i class="fab fa-linkedin"></i></a>
+        <a class='soc-link' href='' target=_blank><i class="fas fa-envelope-square"></i></a></p>
+      </div>
+    </header>
+
+
+
+    <div id='projectContainer'>
+      <p class='project-date'><i class="fas fa-user"></i> Fanny Kassapian <br/><i class="far fa-calendar-alt"></i> 2019/06/05</p>
+
+      <span id="time"></span>
+      <div id="map"></div>
+
+      <div class='section'>
+        <div id='countryContainer'><img src="img/arrow.png" alt="Arrow" id='arrow'></img><div id = "country"></div></div>
+        <p id ='explanation' class='text-main'></p>
+        <h3 class='title-aa'>Who's up there?</h3>
+        <p class='text-main'>The ISS is the largest human-made body in low Earth orbit. It has been inhabited continously since November 2000. It currently counts <span id="numberPeople">?</span> residents:</p>
+        <ul class='text-main' id="people"> </ul>
+        <p class='text-main'>
+        <h2 class='title-a'>Data</h2>
+        <p class='text-main'>
+          All the data used to produce this map is retrieved dynamically thanks to the <a class='text-link' href='http://open-notify.org/' target="_blank">Open Notify APIs</a>, a collection of NASA and space APIs for public use, developped by <a class='text-link' href='https://github.com/natronics' target="_blank">Nathan Bergey</a>.
+        </p>
+        <p class='text-main'>
+          The country, sea or ocean names corresponding to the latitude and longitude coordinates returned by Open Notify are retrieved via the <a class='text-link' href='http://www.geonames.org/' target="_blank">GeoNames APIs</a>. The GeoNames geographical database covers all countries and contains over eleven million placenames that can be downloaded or accessed via their <a class='text-link' href='https://www.geonames.org/export/ws-overview.html' target="_blank">web services</a>.
+        </p>
+        <h2 class='title-a'>Code</h2>
+        <p class='text-main'>
+          The source code behind this project (HTML, CSS, jQuery, JavaScript), can be found in my <a class='text-link' href='' target="_blank">GitHub repository</a>.<br/>
+          For the same in Python, please refer to this <a class='text-link' href='' target="_blank">Notebook (GitHub)</a>.
+          </p>
+        <h4 class='title-aaa'>Map</h4>
+        <p class='text-main'>
+          The map is built with <a class='text-link' href='https://leafletjs.com/' target="_blank">Leaflet.js</a>. For a basic setup, you can follow their <a class='text-link' href='https://leafletjs.com/examples/quick-start/' target="_blank">quick start guide</a>.
+        </p>
+        <p class='text-main'>
+          I used the <a class='text-link' href='https://www.arcgis.com/home/item.html?id=50c23e4987a44de4ab163e1baeab4a46' target="_blank">World Imagery Basemap from ESRI</a> as a tile layer on top of the map. All the free tile providers along with previews of the layers are available <a class='text-link' href='https://leaflet-extras.github.io/leaflet-providers/preview/' target="_blank">here</a>.<br/>
+          I used a custom image (hand drawn with <a class='text-link' href='https://procreate.art/' target="_blank">procreate</a>) for the ISS marker, on top of a larger circle marker.
+        </p>
+        <p class='text-main'>
+          The map and markers are initialized with <code>[0,0]</code> coordinates. These are updated with the latitude and longitude returned by the <a class='text-link' href='http://open-notify.org/Open-Notify-API/ISS-Location-Now/' target="_blank">iss-now.json</a> endpoint of the Open Notify API.
+        </p>
+        <h4 class='title-aaa'>Open Notify</h4>
+        <p class='text-main'>
+          In <a class='text-link' href='http://open-notify.org/Open-Notify-API/' target="_blank">these examples</a>, Open Notify provides jQuery primers to make requests to its APIs.
+        </p>
+        <h4 class='title-aaa'>GeoNames</h4>
+        <p class='text-main'>
+          I used the <a class='text-link' href='http://www.geonames.org/export/web-services.html#countrycode' target="_blank">countrycode and ocean REST webservices</a> to retrieve the country name or ocean/sea name of a given set of coordinates.
+        </p>
+        <p class='text-main'>
+          GeoNames data is free. The credit daily limit per application (identified by the parameter 'username') is of 20,000 requests. The hourly limit is of 1,000 requests.
+        </p>
+        <p class='text-main'>
+          The countryCode API takes the following parameters: lat (latitude), lng (longitude), type, lang, radius (buffer in km for closest country in coastal areas. Lang (to specify the language the country name should be in) and type (JSON or XML) are optional.
+        </p>
+        <p class='text-main'>
+          When we make a request to <a class='text-link' href='http://www.geonames.org/export/web-services.html#countrycode' target="_blank">countrycode</a>, the API returns a JSON with the <code>countryCode</code>, <code>countryName</code>, <code>distance</code> and <code>languages</code> as keys. If the API does not find a country name corresponding to the given set of coordinates, it returns the following: <code>{'status': {'message': 'no country code found', 'value': 15}}</code>. Which is bound to happen a lot, since only 29% of Earth is land...
+        </p>
+        <p class='text-main'>
+          In this case, we make a request to the <a class='text-link' href='http://www.geonames.org/export/web-services.html#ocean' target="_blank">ocean</a> API. It takes lat, lng and radius (optional) as parameters. It returns a JSON with <code>ocean</code> as key, and a nested dictionary with <code>distance</code> and <code>name</code> as keys.<br/>
+          Again, we have to make sure that this is the actual response we get from the API (without raising an error), and if not, return a custom message to the user. Either the API cannot retrieve the corresponding country/ocean name based on the given coordinates, or the application has reached the rate limit.
+        </p>
+        <pre class='pre-scrollable JavaScript Atom One Dark>'><code>
+          // Request parameters
+          var parameters = {'lat': lat, 'lng': lon, 'type': 'JSON', 'radius':50, 'username':'user'};
+          // Request to countryCode endpoint
+          $.getJSON('http://api.geonames.org/countryCode?', parameters, function(data) {
+
+              // Initialize country variable
+              var country = '';
+              // Check if 'countryName' is a key in API response
+              if ('countryName' in data) {
+                // Extract value
+                country = data['countryName'];
+                // Update html
+                $("#country").html('The ISS is above ' + country + '!');
+              }
+
+              // If 'countryName' is NOT a key in data, make a request to the Ocean endpoint
+              else {
+                // Request parameters
+                var parameters = {'lat': lat, 'lng': lon, 'radius':1, 'username':'user'};
+                // Request to Ocean endpoint
+                $.getJSON('http://api.geonames.org/oceanJSON?', parameters, function(data) {
+
+                  // Create ocean variable
+                  var ocean = '';
+                  // Check if 'ocean' is a key in API response
+                  if ('ocean' in data) {
+                    // Extract value
+                    ocean = data['ocean']['name'];
+                    // Update html
+                    $("#country").html('The ISS is above the '+ ocean + '!');
+                  }
+                  // If the API response does not include 'ocean' as a key, return an error message
+                  else {
+                    $("#country").html("Oups! It looks like the GeoNames API is not responding.");
+                  }
+
+                });
+              }
+
+          });
+          </code></pre>
+      </div>
+    </div>
+
+
+    <footer class="footer">
+      <div class="py-2">
+          <span>
+            &#169; <a id='email' href="mailto:fkassapian@gmail.com" target="_blank">Fanny Kassapian</a>, 2019
+          </span>
+        </div>
+    </footer>
+
+  </div>
+
+  <script src="http://code.jquery.com/jquery-2.0.3.min.js"> </script>
+
+  <!-- highlight.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages/javascript.min.js"></script>
+  <!-- <script>hljs.initHighlightingOnLoad();</script> -->
+
+  <!-- Same as initHighlightingOnLoad() but includes all <code> tags-->
+  <script>
+    $(document).ready(function() {
+      $('code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });
+  </script>
+
+  <script>
+
+    // CREATE MAP
+    var map = L.map('map').setView([0,0], 2);
+
+    // ADD TILE LAYER
+    var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+  });
+
+    Esri_WorldImagery.addTo(map);
+
+    // FUNCTION THAT GETS lat, lon, unix_timestamp FROM OPEN NOTIFY EVERY 5s
+    // FORMATS timestamp, UPDATES HTML, UPDATES MARKER'S POSITION & PANS MAP
+    // REQUESTS countryName from geonames API and UPDATES HTML
+
+    function moveISS () {
+        $.getJSON('http://api.open-notify.org/iss-now.json?callback=?', function(data) {
+
+            // GET VARIABLES lat, lon & unix_timestamp FROM JSON
+
+            var lat = data['iss_position']['latitude'];
+            var lon = data['iss_position']['longitude'];
+            var unix_timestamp = data['timestamp'];
+
+            // TIME FORMAT
+
+            // New JavaScript date object based on the unix timestamp
+            // multiplied by 1000 so that the argument is in milliseconds, not seconds.
+            var date = new Date(unix_timestamp*1000);
+
+            // Get hours, minutes, seconds from timestamp
+            var hours = date.getHours();
+            var minutes = "0" + date.getMinutes();
+            var seconds = "0" + date.getSeconds();
+
+            // Time in minutes:seconds:milliseconds format
+            var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+
+            // Update html placeholder
+            $("#time").html("Time: " + formattedTime);
+
+            // SET LAT & LON FOR ISS MARKER, CIRCLE MARKER & TO PAN THE MAP
+
+            iss.setLatLng([lat, lon]);
+            isscirc.setLatLng([lat, lon]);
+            map.panTo([lat, lon], animate=true);
+
+            // REQUEST TO geonames API
+
+            // Parameters
+            var parameters = {'lat': lat, 'lng': lon, 'type': 'JSON', 'radius':50, 'username':'fannyk'};
+            // Request
+            $.getJSON('http://api.geonames.org/countryCode?', parameters, function(data) {
+
+            // If a countryCode corresponding to the LAT & LON exists, geonames returns a JSON with the countryCode, countryName, distance & languages as keys.
+            // If there is no corresponding countryCode, geonames returns: {'status': {'message': 'no country code found', 'value': 15}}
+            // In which case, we make a request to the Ocean API to retrieve the ocean/sea name.
+            // If again the LAT & LON cannot be retrieved, then we return an error.
+                var country = '';
+
+                // Same as if/else (shortcut)
+                // country = ('countryName' in data) ? data['countryName'] : 'the ocean' ;
+
+                if ('countryName' in data) {
+                  country = data['countryName'];
+                  // Updates html
+                  $("#country").html('The ISS is above ' + country + '!');
+                }
+                else {
+                  var parameters = {'lat': lat, 'lng': lon, 'radius':1, 'username':'fannyk'};
+                  $.getJSON('http://api.geonames.org/oceanJSON?', parameters, function(data) {
+                    var ocean = '';
+                    if ('ocean' in data) {
+                      ocean = data['ocean']['name'];
+                      // Updates html
+                      $("#country").html('The ISS is above the '+ ocean + '!');
+                    }
+                    else {
+                      $("#country").html("Oups! It looks like the GeoNames API is not responding (*)");
+                      $('#explanation').html("(*) This application may have reached the rate limit for requests to GeoNames, or GeoNames could not find the country/ocean name for this set of coordinates.")
+                    }
+
+                  });
+                }
+
+            });
+
+        });
+
+        // CALL THE FUNCTION EVERY 5s
+
+        setTimeout(moveISS, 5000);
+    }
+
+    // CREATE CUSTOM ICON FOR MARKER
+
+    var ISSIcon = L.icon({
+        iconUrl: 'img/iss.png',
+        iconSize: [120, 120],
+        iconAnchor: [55, 55]
+    });
+
+    // INITIALIZE MARKERS
+
+    var iss = L.marker([0, 0], {icon: ISSIcon}).addTo(map);
+    var isscirc = L.circle([0,0], 2200e3, {color: "#fff", opacity: 0.3, weight:1, fillColor: "#fff", fillOpacity: 0}).addTo(map);
+
+    // CALL moveISS() FUNCTION
+
+    moveISS();
+
+    // GETS NUMBER OF PEOPLE IN THE ISS & THEIR NAMES
+    // UPDATES HTML PLACEHOLDER
+
+    $.getJSON('http://api.open-notify.org/astros.json?callback=?', function(data) {
+        var number = data['number'];
+        $('#numberPeople').html(number);
+
+        data['people'].forEach(function (d) {
+             $('#people').append('<li>' + d['name'] + '</li>');
+        });
+    });
+
+
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,152 @@
+/* ----- BODY ----- */
+/* Body begins after navbar ends */
+body{
+  font-family: 'Roboto';
+  background-color: #F6F6FB;
+  position:relative;
+}
+
+/* Container */
+.container{
+  padding-right: 10%;
+  padding-left: 10%;
+  padding-top: 3%;
+  background-color: #FFF;
+  min-height:100vh;
+  height:100%;
+  padding-bottom: 35px;
+}
+
+@media only screen and (max-width: 576px) {
+  .container{
+    padding-right:20px;
+    padding-left: 20px;
+    padding-top: 30px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+  .container{
+    padding-right:5%;
+    padding-left: 5%;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .container{
+    padding-right:8%;
+    padding-left: 8%;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1100px) {
+  .container{
+    padding-right:10%;
+    padding-left: 10%;
+  }
+}
+
+#titleContainer {
+  border-bottom: solid 1px #E0E0E5;
+}
+
+.soc-link {
+  font-family: 'Roboto';
+  font-size: 1.4em;
+  color: #595A5C;
+  padding-right: 9px;
+}
+
+.soc-link:hover {
+  color: #171717;
+}
+
+#mainTitle {
+  font-family: 'Lato';
+  font-size: 2.5em;
+  color: #29354E;
+}
+
+#mainDescription {
+  font-family: 'Lato';
+  font-size: 1.4em;
+  font-weight: 300;
+  color: #C1C1C1;
+}
+
+#projectsContainer {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.project-container {
+  padding-bottom: 20px;
+}
+
+.project-title, .project-title:hover {
+  font-family: 'Lato';
+  color: #2B59C3;
+  font-size: 0.8em;
+}
+
+.project-link, .project-link:hover {
+  font-family: 'Roboto';
+  color: #29354E;
+  font-size: 1em;
+}
+
+.project-date {
+  font-family: 'Roboto';
+  color: #B2B3B7;
+  font-size: 0.9em;
+}
+
+.project-description {
+  font-family: 'Roboto';
+  color: #707073;
+  font-size: 1em;
+  line-height: 1.7em;
+  text-align: justify;
+}
+
+.desc-imp{
+  color: #29354E;
+  font-weight: 700;
+}
+
+.desc-link, .desc-link:hover {
+  color: #29354E;
+}
+
+.project-links {
+  /* padding-left: 10%; */
+  text-align: right;
+  font-weight: 300;
+}
+
+.links, .links:hover {
+  color: #2B59C3;
+  font-size: 1em;
+}
+
+
+/* ----- FOOTER ----- */
+.footer{
+  /* padding-right:10%;
+  padding-left: 10%; */
+  align-items: center;
+  color: #6F7073;
+  font-family: "Roboto";
+  text-align: center;
+  font-size:0.7rem;
+  background-color: #F6F6FB;
+  height:35px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: absolute;
+}
+
+#email{
+  color: #2B59C3;
+}
