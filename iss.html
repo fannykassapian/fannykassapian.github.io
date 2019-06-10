@@ -140,7 +140,7 @@
                 // Request parameters
                 var parameters = {'lat': lat, 'lng': lon, 'radius':1, 'username':'user'};
                 // Request to Ocean endpoint
-                $.getJSON('http://api.geonames.org/oceanJSON?', parameters, function(data) {
+                $.getJSON('https://api.geonames.org/oceanJSON?', parameters, function(data) {
 
                   // Create ocean variable
                   var ocean = '';
@@ -208,7 +208,7 @@
     // REQUESTS countryName from geonames API and UPDATES HTML
 
     function moveISS () {
-        $.getJSON('http://api.open-notify.org/iss-now.json?callback=?', function(data) {
+        $.getJSON('https://api.open-notify.org/iss-now.json?callback=?', function(data) {
 
             // GET VARIABLES lat, lon & unix_timestamp FROM JSON
 
@@ -244,7 +244,7 @@
             // Parameters
             var parameters = {'lat': lat, 'lng': lon, 'type': 'JSON', 'radius':50, 'username':'fannyk'};
             // Request
-            $.getJSON('http://api.geonames.org/countryCode?', parameters, function(data) {
+            $.getJSON('https://api.geonames.org/countryCode?', parameters, function(data) {
 
             // If a countryCode corresponding to the LAT & LON exists, geonames returns a JSON with the countryCode, countryName, distance & languages as keys.
             // If there is no corresponding countryCode, geonames returns: {'status': {'message': 'no country code found', 'value': 15}}
@@ -262,7 +262,7 @@
                 }
                 else {
                   var parameters = {'lat': lat, 'lng': lon, 'radius':1, 'username':'fannyk'};
-                  $.getJSON('http://api.geonames.org/oceanJSON?', parameters, function(data) {
+                  $.getJSON('https://api.geonames.org/oceanJSON?', parameters, function(data) {
                     var ocean = '';
                     if ('ocean' in data) {
                       ocean = data['ocean']['name'];
@@ -306,7 +306,7 @@
     // GETS NUMBER OF PEOPLE IN THE ISS & THEIR NAMES
     // UPDATES HTML PLACEHOLDER
 
-    $.getJSON('http://api.open-notify.org/astros.json?callback=?', function(data) {
+    $.getJSON('https://api.open-notify.org/astros.json?callback=?', function(data) {
         var number = data['number'];
         $('#numberPeople').html(number);
 
