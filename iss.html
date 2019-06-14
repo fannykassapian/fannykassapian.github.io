@@ -52,7 +52,7 @@
     <header>
       <div id='titleContainer'>
         <h1 id='mainTitle'>Where is the International Space Station?</h1>
-        <p id='mainDescription'>This map tracks the real time position of the International Space Station (ISS). It updates every 5 seconds.</p>
+        <p id='mainDescription'>This map tracks the real time position of the International Space Station (ISS). It updates every 15 seconds.</p>
         <p><a id='home-link' href='index.html'><i class="fas fa-angle-left"></i> Home</a></p>
         <p id='socContainer'><a class='soc-link' href='https://github.com/fannykassapian' target=_blank><i class="fab fa-github-square"></i></a>
         <a class='soc-link' href='https://www.linkedin.com/in/fannykassapian/' target=_blank><i class="fab fa-linkedin"></i></a>
@@ -203,7 +203,7 @@
 
     Esri_WorldImagery.addTo(map);
 
-    // FUNCTION THAT GETS lat, lon, unix_timestamp FROM OPEN NOTIFY EVERY 5s
+    // FUNCTION THAT GETS lat, lon, unix_timestamp FROM OPEN NOTIFY EVERY 15s
     // FORMATS timestamp, UPDATES HTML, UPDATES MARKER'S POSITION & PANS MAP
     // REQUESTS countryName from geonames API and UPDATES HTML
 
@@ -281,9 +281,9 @@
 
         });
 
-        // CALL THE FUNCTION EVERY 5s
+        // CALL THE FUNCTION EVERY 15s
 
-        setTimeout(moveISS, 5000);
+        setTimeout(moveISS, 15000);
     }
 
     // CREATE CUSTOM ICON FOR MARKER
